@@ -7,17 +7,20 @@ import Education from './components/Education/Education';
 import SocialNetworks from './components/SocialNetworks/SocialNetworks';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
-      <Profile />
-      <Skills />
-      <Experience />
-      <Education />
-      <SocialNetworks />
-      <Contact />
+      <main className="App-content">
+        <Profile />
+        <Skills />
+        <Experience />
+        <Education />
+        <SocialNetworks />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

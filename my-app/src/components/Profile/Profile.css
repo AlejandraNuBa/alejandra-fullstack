@@ -135,7 +135,8 @@
 /* móviles */
 @media (max-width: 767px) {
 	.banner {
-		height: 50vh;
+    background: url('../../../public/images/profile-section/galaxy-banner-mobile.jpeg') no-repeat center center/cover;
+		height: 30vh;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
