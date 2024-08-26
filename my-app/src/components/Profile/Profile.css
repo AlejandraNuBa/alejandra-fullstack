@@ -1,4 +1,174 @@
-#profile {
-	padding: 2rem;
-	margin: 1rem 0;
+/* Estilos generales para pantallas grandes */
+.banner {
+  background: url('../../../public/images/profile-section/galaxy-banner.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.profile-picture {
+  border: 5px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-text {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+#name, #subtitle, #details {
+  display: inline-block;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  font-size: 2.5em;
+}
+
+#name {
+  animation: typing 4s steps(22) 1s 1 normal both;
+}
+
+#subtitle {
+  font-size: 23px;
+  animation: typing 2s steps(22) 3s 1 normal both;
+}
+
+#details {
+  font-size: 16px;
+  animation: typing 4s steps(22) 5s 1 normal both;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  animation: star-movement 5s infinite alternate ease-in-out;
+}
+
+@keyframes star-movement {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 50px); }
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent, rgba(0, 0, 0, 0.7));
+  z-index: 0;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	.banner {
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-text h1 {
+    font-size: 40px;
+  }
+
+  .profile-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.banner {
+		height: 80vh;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-text h1 {
+    font-size: 35px;
+  }
+
+  .profile-text h2 {
+    font-size: 23px;
+  }
+}
+
+/* móviles */
+@media (max-width: 767px) {
+	.banner {
+		height: 50vh;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden;
+		padding: 20px;
+	}
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-text h1 {
+    font-size: 20px !important;
+  }
+
+  .profile-text h2 {
+    font-size: 16px !important;
+  }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-text h1 {
+    font-size: 20px;
+  }
+
+  .profile-text h2 {
+    font-size: 16px;
+  }
 }
