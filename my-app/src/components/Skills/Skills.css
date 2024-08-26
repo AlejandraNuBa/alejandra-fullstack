@@ -1,4 +1,209 @@
-#skills {
-  padding: 2rem;
-  margin: 1rem 0;
+/* Importa los estilos básicos de slick-carousel */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Estilos generales para pantallas grandes */
+.bg {
+  background: #333 center center/cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  z-index: 1; /* Colocar el fondo en un nivel bajo */
+}
+
+.skills {
+  text-align: center;
+  color: white;
+  z-index: 2; /* Encima del fondo */
+  margin-top: 20px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+#title {
+  display: inline-block;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  font-size: 2.5em;
+}
+
+#title {
+  animation: typing 1s steps(5) 1s 1 normal both;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  animation: star-movement 5s infinite alternate ease-in-out;
+  z-index: 1; /* Estrellas detrás de los banners */
+}
+
+@keyframes star-movement {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 50px); }
+}
+
+.bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent, rgba(0, 0, 0, 0.7));
+  z-index: 0;
+}
+
+/* logos styls */
+.floating-logo {
+  width: 50px;
+  position: absolute;
+  animation: float-logo 20s infinite alternate ease-in-out;
+  z-index: 1; /* Logos detrás de los banners */
+}
+
+@keyframes float-logo {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(60px, 25px) rotate(360deg);
+  }
+}
+
+/* Estilos del carrusel */
+.carousel-container {
+  padding: 20px;
+  width: 100%; /* Asegurar que el carrusel ocupe todo el ancho */
+  z-index: 3; /* Asegurar que esté encima de todo */
+}
+
+.banners-skills {
+  background: linear-gradient(135deg, #622774, #090463);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  margin: 0 10px; /* Espacio entre los banners */
+}
+
+.banners-skills h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.banners-skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.banners-skills ul li {
+  margin-bottom: 5px;
+}
+
+.slick-arrow {
+  background-color: black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.slick-prev {
+  left: -40px;
+}
+
+.slick-next {
+  right: -40px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	.bg {
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		overflow: visible;
+	}
+
+  .skills h1 {
+    font-size: 40px;
+  }
+
+  .skills h2 {
+    font-size: 24px;
+  }
+}
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.bg {
+		height: 80vh;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow: visible;
+	}
+
+  .skills h1 {
+    font-size: 35px;
+  }
+
+  .skills h2 {
+    font-size: 23px;
+  }
+
+  .banners-skills {
+    margin: 0 10px; /* Añadir margen entre los banners */
+  }
+}
+
+/* móviles */
+@media (max-width: 767px) {
+	.bg {
+    background: #333 no-repeat center center/cover;
+		height: 30vh;
+		flex-direction: column;
+		align-items: center;
+		overflow: visible;
+		padding: 20px;
+	}
+
+  .skills h1 {
+    font-size: 20px !important;
+  }
+
+  .skills h2 {
+    font-size: 16px !important;
+  }
+
+  .banners-skills {
+    margin: 0 auto; /* Centrar el banner en móviles */
+    width: 90%; /* Ajustar ancho en móviles */
+  }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .skills h1 {
+    font-size: 20px;
+  }
+
+  .skills h2 {
+    font-size: 16px;
+  }
 }
