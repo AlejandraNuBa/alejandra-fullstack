@@ -13,7 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/alejandra-fullstack">
         <Routes>
           <Route path="/" element={<Index />} />
           {/* RUTAS PERSONALIZADAS POR ENCIMA DE LA RUTA GENERAL "*" */}
